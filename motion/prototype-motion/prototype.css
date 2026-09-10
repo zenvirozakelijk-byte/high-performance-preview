@@ -1,0 +1,63 @@
+.motion-study {
+  position: fixed;
+  z-index: 60;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 8px 18px;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  background: #161a18;
+  color: #f1f2ea;
+  border: 1px solid #b3b9ae;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px #161a1830;
+  font-family: var(--font-body);
+}
+.motion-study__name { padding-right: 16px; border-right: 1px solid #b3b9ae50; }
+.motion-study__name strong { display: block; font-size: 11px; letter-spacing: .1em; }
+.motion-study__name small { color: #b3b9ae; font-size: 10px; }
+.motion-study button {
+  color: #f1f2ea;
+  font: 600 12px var(--font-body);
+  padding: 0 14px;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  white-space: nowrap;
+  background: transparent;
+  cursor: pointer;
+}
+.motion-study button:hover { border-color: #b3b9ae; }
+.motion-study button:focus-visible { outline: 2px solid #d5f26b; outline-offset: 3px; }
+.motion-study button[aria-pressed="true"] { background: #d5f26b; color: #161a18; }
+.motion-study button:disabled { color: #b3b9ae; cursor: default; }
+.motion-study__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+body:has(.motion-study) { padding-bottom: 84px; }
+body:has(.motion-study) .preview-badge { display: none; }
+body:has(.motion-study) .back-to-top { bottom: 94px; }
+body:has(dialog[open]) .motion-study { visibility: hidden; }
+html[data-motion-study="on"] .reveal.is-prepared,
+html[data-motion-study="on"] .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+html[data-motion-study="on"] .product-card__photo,
+html[data-motion-study="on"] .product-card:hover .product-card__photo { transition: none; transform: none; }
+html[data-motion-study="on"] .diagram-panel,
+html[data-motion-study="on"] .diagram-guides { transition: none; }
+html[data-motion-study="on"] .is-expanded .diagram-panel { transform: none; }
+html[data-motion-study="on"] dialog[open] { animation: none; }
+.motion-word-window { display: inline-block; overflow: clip; vertical-align: top; padding: .08em .035em; margin: -.08em -.035em; }
+.motion-word { display: inline-block; }
+.motion-read-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: #d5f26b; z-index: 65; transform: scaleX(0); transform-origin: left; pointer-events: none; }
+@media (max-width: 600px) {
+  .motion-study { bottom: max(10px, env(safe-area-inset-bottom)); padding: 6px 8px; gap: 2px; }
+  .motion-study__name { padding: 0 8px 0 2px; }
+  .motion-study__name strong { font-size: 9px; letter-spacing: .06em; }
+  .motion-study__name small { font-size: 8px; }
+  .motion-study button { padding: 0 9px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-read-progress { display: none; }
+}

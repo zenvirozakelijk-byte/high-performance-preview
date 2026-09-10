@@ -1,0 +1,1585 @@
+<!doctype html>
+<html data-share-root="../../../" lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#161a18">
+    <title>DE EERSTE COLLECTIE. — High Performance</title>
+    <meta name="description" content="Nederlandse performance wear voor hybrid racing, functionele kracht en lange afstanden.">
+    <meta property="og:title" content="DE EERSTE COLLECTIE.">
+    <meta property="og:site_name" content="High Performance">
+    <meta property="og:type" content="website">
+    
+    <style>
+/* ---------- 1. Hero ----------------------------------------------------- */
+.hero{position:relative;min-height:min(94svh,940px);display:grid;
+  grid-template-rows:auto 1fr auto;background:var(--carbon);color:var(--field-white);
+  padding:clamp(18px,2.4vw,30px) var(--gutter) clamp(18px,2.2vw,26px);overflow:hidden;isolation:isolate}
+@media (min-width:900px){
+  .hero{padding-left:calc(var(--gutter) + var(--rail-w))}
+}
+.hero__visual{position:absolute;inset:0;z-index:-2}
+.hero__poster,.hero__video{width:100%;height:100%;object-fit:cover}
+.hero__video{position:absolute;inset:0;opacity:0;transition:opacity .9s linear}
+.hero__video.is-playing{opacity:1}
+.hero__shade{position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(22,26,24,.82) 0%,rgba(22,26,24,.42) 32%,
+    rgba(22,26,24,.58) 66%,rgba(22,26,24,.92) 100%)}
+.hero__grain{position:absolute;inset:0;z-index:-1;opacity:.06;
+  background-image:radial-gradient(var(--field-white) 30%,transparent 32%);
+  background-size:13px 13px;
+  -webkit-mask-image:linear-gradient(180deg,transparent 40%,#000 100%);
+  mask-image:linear-gradient(180deg,transparent 40%,#000 100%)}
+.hero__top,.hero__bottom{display:flex;align-items:center;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+.hero__top span{display:flex;align-items:center;gap:9px}
+.hero__content{align-self:end;position:relative;z-index:1;
+  padding:clamp(30px,6vw,64px) 0 clamp(22px,3vw,40px);max-width:min(100%,1180px)}
+.hero__content h1{margin-bottom:clamp(18px,2.2vw,30px)}
+/* Each line is its own window. The words start below the sill and slide up into
+   it, so the headline is uncovered rather than faded in. The padding keeps the
+   tails of letters like g and j clear of the window edge. */
+.hero__content h1 .line{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+.hero__content h1 .word{display:inline-block}
+/* The Signal rule that draws across before the headline arrives. With no
+   JavaScript it is simply a rule, which is what the brandbook does anyway. */
+.hero__rule{display:block;height:2px;width:min(100%,1180px);background:var(--signal);
+  transform-origin:0 50%;margin-bottom:clamp(16px,2vw,26px)}
+.hero__content>p{color:var(--field-white);max-width:44ch;font-size:clamp(16px,1.5vw,20px);
+  line-height:1.5;margin-bottom:clamp(22px,2.6vw,34px)}
+.hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.hero__text-link{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12px;
+  letter-spacing:.14em;text-transform:uppercase;padding:8px 0;
+  border-bottom:1px solid var(--fog);transition:border-color var(--fast) linear}
+.hero__text-link:hover{border-color:var(--signal)}
+.hero__text-link .icon{width:16px;height:16px}
+.hero__bottom .mono{max-width:min(52vw,540px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.motion-control{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:8px 14px;
+  border:1px solid var(--dark-rule);color:var(--field-white);font-size:var(--meta);
+  letter-spacing:var(--meta-track);text-transform:uppercase}
+.motion-control:hover{border-color:var(--signal)}
+.motion-control .icon{width:15px;height:15px}
+.scroll-link{display:inline-flex;align-items:center;gap:8px;padding:8px 0}
+.scroll-link:hover{color:var(--signal)}
+.hero__progress{position:absolute;left:0;bottom:0;height:3px;width:100%;transform:scaleX(0);
+  transform-origin:0 50%;background:var(--signal);z-index:2}
+
+/* ---------- 2. Manifest ------------------------------------------------- */
+/* Brandbook page 12: a Field White panel beside a full Signal panel. */
+.manifest{padding:0;position:relative;background:var(--carbon)}
+.manifest__grid{display:grid}
+.manifest__accent{background:var(--signal);color:var(--carbon);
+  padding:clamp(38px,6vw,86px) var(--gutter);position:relative;overflow:hidden}
+.manifest__accent h2{margin-bottom:clamp(14px,1.6vw,22px)}
+.manifest__accent p{font-size:clamp(17px,1.8vw,24px);line-height:1.4;max-width:26ch;
+  margin:0;font-weight:700}
+.manifest__accent .meta{color:var(--carbon);position:relative;z-index:1}
+.manifest__accent>*{position:relative;z-index:1}
+.manifest__values{padding:clamp(38px,6vw,86px) var(--gutter);display:grid;
+  gap:clamp(22px,2.6vw,34px);align-content:center;background:var(--carbon)}
+.manifest__values>.meta{color:var(--fog)}
+.value-row{display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,26px);
+  padding-top:16px;border-top:1px solid var(--dark-rule);align-items:start}
+.value-row__number{font-family:var(--font-display);font-size:clamp(24px,2.6vw,38px);
+  line-height:.9;color:var(--signal);font-variant-numeric:tabular-nums}
+.value-row h3{font-size:clamp(18px,1.9vw,26px);font-family:var(--font-display);
+  text-transform:uppercase;letter-spacing:-.01em;line-height:1.05;margin:0}
+@media (min-width:900px){
+  .manifest__grid{grid-template-columns:1fr 1fr}
+  .manifest__accent{display:grid;align-content:center}
+}
+
+/* ---------- 3. Collection ----------------------------------------------- */
+.collection-section{background:var(--paper);color:var(--ink)}
+.section-heading{display:grid;gap:clamp(18px,2.4vw,30px);margin-bottom:clamp(34px,4.4vw,64px);
+  align-items:end}
+/* A hairline that draws itself across before the block underneath it arrives:
+   the frame first, then what sits in it. Static without JavaScript. */
+.section-rule{display:block;height:1px;width:100%;background:var(--rule);
+  transform-origin:0 50%;margin-bottom:clamp(24px,3.2vw,42px)}
+.section-heading:has(+ .section-rule){margin-bottom:clamp(18px,2.2vw,28px)}
+.section-heading__description{color:var(--text-2);max-width:38ch;margin:0;font-size:clamp(15px,1.4vw,18px)}
+@media (min-width:900px){
+  .section-heading{grid-template-columns:1.4fr auto;gap:clamp(24px,4vw,72px)}
+  .section-heading>div:first-child{min-width:0}
+}
+.collection-layout{display:grid;gap:clamp(14px,1.6vw,22px)}
+.collection-intro{background:var(--carbon);color:var(--field-white);
+  padding:clamp(26px,3vw,44px);display:grid;gap:18px;align-content:space-between;
+  position:relative;overflow:hidden;min-height:280px}
+.collection-intro>*{position:relative;z-index:1}
+.collection-intro .halftone{opacity:.14;z-index:0}
+.collection-intro h3{font-family:var(--font-display);text-transform:uppercase;
+  font-size:clamp(26px,3.2vw,46px);line-height:.95;letter-spacing:-.02em;margin:0}
+.collection-intro p{color:var(--text-2);font-size:15px;margin:0}
+.collection-intro__bottom{align-self:end}
+.collection-intro .circle-link{border-color:var(--dark-rule);color:var(--field-white)}
+.collection-intro .circle-link:hover{background:var(--signal);color:var(--carbon);border-color:var(--signal)}
+
+.product-card{position:relative;display:flex;flex-direction:column;background:var(--paper-2)}
+.product-card__image{position:relative;display:block;overflow:hidden;background:var(--paper-2);
+  aspect-ratio:4/5}
+.product-card__photo{width:100%;height:100%;object-fit:contain;transition:transform .7s var(--ease)}
+.product-card--photo .product-card__photo{object-fit:cover}
+.product-card:hover .product-card__photo{transform:scale(1.03)}
+.product-card__tag{position:absolute;top:12px;left:12px;background:var(--carbon);
+  color:var(--field-white);--meta-color:var(--field-white);
+  padding:5px 9px;font-size:10px;letter-spacing:.14em}
+.product-card__view{position:absolute;right:12px;bottom:12px;width:44px;height:44px;
+  display:grid;place-items:center;background:var(--field-white);color:var(--carbon);
+  opacity:0;transform:translateY(6px);transition:opacity var(--mid) linear,transform var(--mid) var(--ease)}
+.product-card:hover .product-card__view,.product-card:focus-within .product-card__view{opacity:1;transform:none}
+.product-card__info{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:16px clamp(14px,1.4vw,20px) 18px}
+.product-card__info h3{margin:0 0 3px}
+.product-card__info p{margin:0;color:var(--text-2);font-size:13px}
+.product-card__info .mono,.product-card__price{color:var(--ink);--meta-color:var(--ink);font-weight:700;
+  font-size:13px;letter-spacing:.08em;white-space:nowrap}
+.product-card .placeholder{width:100%;height:100%;background:var(--paper-2)}
+
+/* an editorial rhythm: the intro and the first card carry the row, the rest follow */
+@media (min-width:720px){
+  .collection-layout{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1100px){
+  .collection-layout{grid-template-columns:repeat(6,1fr);grid-auto-flow:row dense}
+  .collection-intro{grid-column:span 2}
+  /* the lead card is two rows tall, so its frame takes whatever height is left */
+  .collection-layout>.product-card:nth-of-type(1){grid-column:span 4;grid-row:span 2}
+  .collection-layout>.product-card:nth-of-type(1) .product-card__image{aspect-ratio:auto;flex:1;min-height:340px}
+  .collection-layout>.product-card:nth-of-type(n+2){grid-column:span 2}
+}
+
+/* ---------- 4. Construction --------------------------------------------- */
+.engineering{background:var(--carbon);color:var(--field-white);position:relative;
+  padding:var(--section) var(--gutter);display:grid;gap:clamp(34px,5vw,72px);overflow:hidden}
+.engineering__halftone{position:absolute;inset:0;z-index:0}
+.engineering__copy,.engineering__stage{position:relative;z-index:1;min-width:0}
+.engineering__copy h2{margin-bottom:clamp(16px,2vw,26px)}
+.engineering__intro{color:var(--text-2);max-width:42ch;font-size:clamp(15px,1.5vw,19px)}
+.engineering-features{display:grid;margin:clamp(26px,3vw,42px) 0 0;border-top:1px solid var(--dark-rule)}
+.engineering-feature{border-bottom:1px solid var(--dark-rule)}
+.engineering-feature__button{display:grid;grid-template-columns:auto 1fr auto;gap:16px;
+  align-items:center;width:100%;text-align:left;padding:18px 0;min-height:56px;color:inherit}
+.engineering-feature__button>span:nth-child(2){font-weight:700;font-size:clamp(16px,1.6vw,20px)}
+.engineering-feature__button .icon{width:20px;height:20px;color:var(--fog);
+  transition:transform var(--mid) var(--ease),color var(--fast) linear}
+.engineering-feature__button:hover .icon{color:var(--signal)}
+.engineering-feature.is-active .engineering-feature__button .icon{transform:rotate(45deg);color:var(--signal)}
+.engineering-feature.is-active .engineering-feature__button>span:nth-child(2){color:var(--signal)}
+.engineering-feature__body{overflow:hidden}
+.engineering-feature__body p{color:var(--text-2);margin:0 0 20px;max-width:52ch;padding-left:34px}
+.engineering__note{margin:clamp(22px,2.6vw,34px) 0 0;display:block}
+.engineering__stage{background:var(--surface);border:1px solid var(--dark-rule);
+  padding:clamp(16px,2vw,26px);display:grid;gap:16px;align-content:start}
+.engineering__stage-top{display:flex;justify-content:space-between;gap:12px}
+.engineering__object{position:relative;display:grid;place-items:center;padding:8px 0}
+.garment-diagram{width:100%;max-width:520px;height:auto}
+.diagram-panel{transition:transform .8s var(--ease)}
+.is-expanded .diagram-panel--left{transform:translate(-26px,-12px)}
+.is-expanded .diagram-panel--right{transform:translate(26px,-12px)}
+.is-expanded .diagram-panel--collar{transform:translateY(-30px)}
+.diagram-seam{transition:opacity var(--mid) linear}
+.hotspot{position:absolute;width:38px;height:38px;border-radius:50%;
+  background:var(--carbon);border:1px solid var(--fog);color:var(--field-white);
+  font-size:11px;font-weight:700;display:grid;place-items:center;
+  transition:background var(--fast) linear,color var(--fast) linear,border-color var(--fast) linear}
+.hotspot:hover{border-color:var(--signal)}
+.hotspot.is-active{background:var(--signal);color:var(--carbon);border-color:var(--signal)}
+.hotspot--1{top:16%;left:22%}
+.hotspot--2{top:46%;left:70%}
+.hotspot--3{top:74%;left:34%}
+.engineering__controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;
+  justify-content:space-between;border-top:1px solid var(--dark-rule);padding-top:16px}
+.construction-toggle{display:inline-flex;align-items:center;gap:10px;min-height:44px;
+  padding:10px 16px;border:1px solid var(--dark-rule);color:inherit;font-size:12px;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.construction-toggle:hover{border-color:var(--signal)}
+.construction-toggle .icon{width:16px;height:16px;transition:transform var(--mid) var(--ease)}
+.construction-toggle[aria-pressed="true"] .icon{transform:rotate(45deg)}
+@media (min-width:1000px){
+  .engineering{grid-template-columns:1fr 1fr;align-items:start}
+  .engineering__stage{position:sticky;top:110px}
+}
+
+/* ---------- 5. Product promise ------------------------------------------ */
+.promise{background:var(--paper);color:var(--ink);position:relative}
+.promise__head{display:grid;gap:clamp(18px,2.4vw,30px);margin-bottom:clamp(34px,4.4vw,64px)}
+.promise__head p{color:var(--text-2);max-width:40ch;margin:0}
+.promise__grid{display:grid;gap:1px;background:var(--rule)}
+.pillar{background:var(--paper);padding:clamp(22px,2.6vw,38px) clamp(20px,2.2vw,32px);
+  display:grid;gap:12px;align-content:start;position:relative;
+  transition:background var(--mid) linear}
+.pillar:hover{background:var(--paper-2)}
+.pillar__number{font-family:var(--font-display);font-size:clamp(30px,3.4vw,52px);line-height:.85;
+  color:var(--ink);font-variant-numeric:tabular-nums}
+.pillar h3{font-family:var(--font-display);text-transform:uppercase;letter-spacing:-.01em;
+  font-size:clamp(19px,2vw,27px);line-height:1;margin:0}
+.pillar p{color:var(--text-2);margin:0;font-size:15px}
+.pillar__bar{width:100%;height:5px;background:var(--signal);transform:scaleX(0);
+  transform-origin:0 50%;transition:transform var(--mid) var(--ease)}
+.pillar:hover .pillar__bar{transform:none}
+@media (min-width:700px){.promise__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1200px){.promise__grid{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:900px){
+  .promise__head{grid-template-columns:1.3fr 1fr;align-items:end;gap:clamp(24px,4vw,72px)}
+}
+
+/* ---------- 6. Disciplines ---------------------------------------------- */
+.disciplines{background:var(--carbon);color:var(--field-white)}
+.discipline-grid{display:grid;gap:clamp(12px,1.4vw,18px)}
+.discipline-card{position:relative;display:block;overflow:hidden;min-height:clamp(340px,44vw,540px);
+  background:var(--surface);--meta-color:var(--field-white);--text-2:var(--fog)}
+.discipline-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform 1s var(--ease)}
+.discipline-card:hover img{transform:scale(1.05)}
+.discipline-card__overlay{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(22,26,24,.28) 0%,rgba(22,26,24,.12) 40%,rgba(22,26,24,.9) 100%)}
+.discipline-card__number{position:absolute;top:18px;left:18px;color:var(--field-white);z-index:1}
+.discipline-card__copy{position:absolute;left:18px;right:18px;bottom:18px;z-index:1}
+.discipline-card__copy h3{font-family:var(--font-display);text-transform:uppercase;
+  font-size:clamp(24px,2.6vw,38px);line-height:.95;letter-spacing:-.015em;margin:0 0 6px}
+.discipline-card__copy p{color:var(--text-2);margin:0;font-size:14px}
+.discipline-card__arrow{position:absolute;right:18px;top:18px;width:44px;height:44px;
+  display:grid;place-items:center;background:var(--signal);color:var(--carbon);z-index:1;
+  opacity:0;transform:translateY(-6px);transition:opacity var(--mid) linear,transform var(--mid) var(--ease)}
+.discipline-card:hover .discipline-card__arrow,
+.discipline-card:focus-visible .discipline-card__arrow{opacity:1;transform:none}
+@media (min-width:820px){.discipline-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- 7. The athlete band ----------------------------------------- */
+.athlete{position:relative;padding:0;background:var(--carbon);overflow:hidden;
+  display:grid;align-items:stretch}
+.athlete__visual{position:relative;min-height:clamp(300px,42vw,620px);overflow:hidden}
+.athlete__visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  will-change:transform}
+.athlete__copy{padding:clamp(38px,6vw,96px) var(--gutter);display:grid;gap:clamp(16px,2vw,26px);
+  align-content:center;background:var(--paper);color:var(--ink);position:relative}
+.athlete__copy h2{margin:0}
+.athlete__copy p{color:var(--text-2);max-width:38ch;margin:0;font-size:clamp(15px,1.5vw,19px)}
+.athlete__stance{font-family:var(--font-display);text-transform:uppercase;
+  font-size:clamp(15px,1.4vw,19px);letter-spacing:.06em;color:var(--ink);
+  border-top:1px solid var(--rule);padding-top:16px;margin:0}
+@media (min-width:900px){.athlete{grid-template-columns:1.15fr 1fr}}
+
+/* ---------- 8. Story ---------------------------------------------------- */
+.story{background:var(--paper);color:var(--ink);display:grid;gap:clamp(26px,3.4vw,52px)}
+.story__label{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.story__label .eyebrow{margin:0}
+.origin-mark{display:grid;place-items:center;width:56px;height:56px;border:1px solid var(--rule-strong);
+  border-radius:50%;font-size:12px;font-weight:700;letter-spacing:.1em;flex-shrink:0}
+.story__content h2{margin-bottom:clamp(22px,2.8vw,40px)}
+.story__bottom{display:grid;gap:clamp(20px,2.4vw,32px)}
+.story__bottom p{color:var(--text-2);max-width:60ch;margin:0;font-size:clamp(15px,1.5vw,18px)}
+@media (min-width:960px){
+  .story__bottom{grid-template-columns:1.6fr auto;align-items:end;gap:clamp(30px,5vw,80px)}
+}
+
+/* ---------- 9. Newsletter ----------------------------------------------- */
+.newsletter{background:var(--carbon);color:var(--field-white);display:grid;
+  gap:clamp(26px,3.4vw,56px);position:relative;overflow:hidden}
+.newsletter>*{position:relative;z-index:1}
+.newsletter h2{margin-bottom:clamp(14px,1.8vw,24px)}
+.newsletter>div:first-child p{color:var(--text-2);max-width:38ch;margin:0}
+.newsletter__form{display:grid;gap:10px;align-content:center;max-width:520px;width:100%}
+.newsletter__privacy{color:var(--text-2);font-size:12px;line-height:1.6;margin:6px 0 0}
+.newsletter__privacy a{border-bottom:1px solid var(--dark-rule)}
+.newsletter__privacy a:hover{border-color:var(--signal)}
+@media (min-width:960px){
+  .newsletter{grid-template-columns:1.2fr 1fr;align-items:end}
+}
+
+/* ---------- 10. Product page -------------------------------------------- */
+.product-page{background:var(--paper);color:var(--ink);padding-top:clamp(24px,3vw,44px)}
+.breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  font-size:var(--meta);letter-spacing:var(--meta-track);text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:clamp(22px,3vw,42px)}
+.breadcrumbs a:hover{color:var(--ink)}
+.product-layout{display:grid;gap:clamp(26px,3.4vw,56px);align-items:start}
+.product-gallery{display:grid;gap:12px}
+.product-gallery:focus-visible{outline-offset:6px}
+.product-media{background:var(--paper-2);overflow:hidden}
+.product-media img{width:100%;height:auto}
+.product-details{display:grid;gap:clamp(14px,1.8vw,22px);align-content:start}
+.product-details .eyebrow{margin:0}
+.product-details h1{font-size:clamp(38px,4.6vw,78px);margin:0}
+.product-price{display:flex;align-items:baseline;gap:14px;font-family:var(--font-display);
+  font-size:clamp(26px,2.8vw,40px);line-height:1}
+.product-price s{font-size:.55em;color:var(--ink-2);font-family:var(--font-body)}
+.tax-note{color:var(--ink-3);font-size:12px;margin:-8px 0 0;letter-spacing:.06em;text-transform:uppercase}
+.product-description{color:var(--text-2);max-width:52ch}
+.product-form{display:grid;gap:14px;padding:clamp(18px,2.2vw,26px) 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.product-form__row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 26px}
+.product-form__row>div{width:120px}
+.availability{display:flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.04em;
+  font-weight:700;margin:0}
+.availability::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--signal)}
+.product-add{width:100%;justify-content:space-between}
+.product-detail{border-bottom:1px solid var(--rule)}
+.product-detail summary{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 0;cursor:pointer;font-weight:700;font-size:13px;letter-spacing:.12em;
+  text-transform:uppercase;list-style:none;min-height:52px}
+.product-detail summary::-webkit-details-marker{display:none}
+.product-detail summary .icon{width:18px;height:18px;transition:transform var(--mid) var(--ease)}
+.product-detail[open] summary .icon{transform:rotate(45deg)}
+.product-detail .rte{padding-bottom:20px;color:var(--ink-2);max-width:56ch}
+@media (min-width:900px){
+  .product-layout{grid-template-columns:1.25fr 1fr;gap:clamp(30px,4vw,72px)}
+  .product-details{position:sticky;top:110px}
+  .product-gallery{grid-template-columns:1fr}
+}
+
+/* ---------- 11. Catalogue, search, cart, content ------------------------ */
+.catalogue,.search-page,.cart-page,.content-page{background:var(--paper);color:var(--ink)}
+.catalogue-heading,.search-page>.eyebrow,.cart-page>.eyebrow,.content-page>.eyebrow{margin-bottom:0}
+.catalogue-heading{display:grid;gap:14px;margin-bottom:clamp(26px,3vw,44px);max-width:60ch}
+.catalogue-heading h1,.search-page h1,.cart-page h1,.content-page h1{margin:0}
+.catalogue-heading .rte,.content-page .rte{color:var(--text-2)}
+.catalogue-toolbar{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:flex-end;
+  justify-content:space-between;padding-bottom:18px;margin-bottom:clamp(22px,2.6vw,38px);
+  border-bottom:1px solid var(--rule)}
+.catalogue-toolbar p{margin:0;font-size:var(--meta);letter-spacing:var(--meta-track);
+  text-transform:uppercase;color:var(--ink-3)}
+.sort-form{display:flex;align-items:flex-end;gap:10px}
+.sort-form label{margin-bottom:8px}
+.sort-form select{min-width:200px}
+.sort-form .icon-button{border:1px solid var(--rule-strong);width:52px;height:52px}
+.sort-form .icon-button:hover{background:var(--signal);color:var(--carbon);border-color:var(--signal)}
+.catalogue-grid{display:grid;gap:clamp(14px,1.6vw,22px)}
+@media (min-width:640px){.catalogue-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.catalogue-grid{grid-template-columns:repeat(3,1fr)}}
+.collection-link,.journal-card{display:grid;gap:12px;background:var(--paper-2);padding-bottom:18px}
+.collection-link img,.journal-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.collection-link h2,.journal-card h2{font-family:var(--font-body);font-weight:700;
+  font-size:19px;margin:0;padding:0 16px}
+.collection-link p,.journal-card p{margin:0;padding:0 16px;color:var(--ink-2);font-size:14px}
+.pagination{display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(28px,3.4vw,50px);
+  padding-top:20px;border-top:1px solid var(--rule);font-size:13px;font-weight:700}
+.pagination a,.pagination span{padding:10px 14px;min-width:44px;min-height:44px;
+  display:inline-grid;place-items:center;border:1px solid var(--rule)}
+.pagination a:hover{border-color:var(--ink);background:var(--paper-2)}
+.empty-state{display:grid;gap:18px;justify-items:start;padding:clamp(30px,4vw,60px) 0;
+  grid-column:1/-1;max-width:52ch}
+.empty-state h1,.empty-state h2{margin:0;font-family:var(--font-display);text-transform:uppercase;
+  font-size:clamp(30px,4.4vw,64px);line-height:.95}
+.empty-state p{color:var(--text-2);margin:0}
+.error-page{min-height:60svh;align-content:center;padding-top:var(--section)}
+.page-search{max-width:520px;margin:clamp(20px,2.4vw,32px) 0 clamp(26px,3vw,44px)}
+.search-page>p{color:var(--ink-2);font-size:var(--meta);letter-spacing:var(--meta-track);
+  text-transform:uppercase;margin-bottom:clamp(20px,2.4vw,32px)}
+.cart-page__form{display:grid;gap:clamp(26px,3.4vw,56px);margin-top:clamp(26px,3vw,44px);
+  align-items:start}
+.cart-page__items{display:grid;gap:0;justify-items:start}
+.cart-page__item{display:grid;grid-template-columns:100px 1fr auto;gap:18px;width:100%;
+  padding:22px 0;border-bottom:1px solid var(--rule);align-items:start}
+.cart-page__item img{width:100px;height:126px;object-fit:cover;background:var(--paper-2)}
+.cart-page__item h2{font-family:var(--font-body);font-weight:700;font-size:18px;margin:0 0 4px}
+.cart-page__item p{color:var(--ink-2);font-size:14px;margin:0 0 2px}
+.cart-page__item label{margin-top:14px}
+.cart-page__item input{width:96px}
+.cart-page__item strong{font-family:var(--font-display);font-size:22px}
+.cart-page__items>.button{margin-top:22px}
+.cart-page__summary{background:var(--paper-2);padding:clamp(22px,2.6vw,34px);display:grid;gap:16px}
+.cart-page__summary h2{font-size:clamp(22px,2.4vw,32px);margin:0}
+.cart-page__summary p{color:var(--ink-2);font-size:13px;margin:0}
+.cart-page__summary .button{width:100%;justify-content:space-between}
+@media (min-width:900px){
+  .cart-page__form{grid-template-columns:1.6fr .8fr;gap:clamp(30px,5vw,80px)}
+  .cart-page__summary{position:sticky;top:110px}
+}
+.contact-fields{display:grid;gap:6px;max-width:560px;margin-top:clamp(22px,2.6vw,36px)}
+.contact-fields label{margin-top:14px}
+.contact-fields .button{margin-top:20px;justify-self:start}
+.content-page{display:grid;gap:14px;align-content:start}
+.content-page .rte{max-width:var(--measure);margin-top:14px}
+.rte h2,.rte h3{margin:1.4em 0 .5em}
+.rte h2{font-size:clamp(26px,3vw,42px)}
+.rte ul,.rte ol{padding-left:1.2em}
+.rte li{margin-bottom:.4em}
+.rte a{border-bottom:1px solid var(--rule-strong)}
+.rte a:hover{border-color:var(--ink)}
+.rte img{margin:1.5em 0}
+.rte table{width:100%;border-collapse:collapse;margin:1.5em 0}
+.rte th,.rte td{border:1px solid var(--rule);padding:10px 12px;text-align:left;font-size:15px}
+.rte th{background:var(--paper-2);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- 12. Motion states ------------------------------------------- */
+/* Set by script only. Without JavaScript none of these classes appear, so the
+   page renders in its finished state. */
+
+/* `pre-motion` comes from motion-boot and is the only thing that hides anything
+   up front. It covers the hero alone, and it is removed on a timer even when the
+   animation library never loads. */
+.pre-motion [data-hero-heading] .word,
+.pre-motion [data-hero-intro],
+.pre-motion [data-hero-actions]{opacity:0}
+.pre-motion [data-hero-rule]{transform:scaleX(0)}
+
+/* Where Motion drives a property, CSS stops transitioning the same one. */
+[data-motion="ready"] .diagram-panel{transition:none}
+[data-pointer-follow] .product-card__photo{transition:none}
+[data-pointer-follow] .product-card:hover .product-card__photo{transform:none}
+
+.reveal.is-prepared{opacity:0;transform:translateY(18px)}
+.reveal.is-visible{opacity:1;transform:none;transition:opacity .6s linear,transform .6s var(--ease)}
+[data-motion-ready] .m-hidden{opacity:0}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal.is-prepared,.reveal.is-visible,.m-hidden{opacity:1;transform:none;transition:none}
+  .hero__video{transition:none}
+  .diagram-panel,.discipline-card img,.product-card__photo,.athlete__visual img{transition:none}
+  .discipline-card:hover img,.product-card:hover .product-card__photo{transform:none}
+  /* the drawn lines and the uncovering windows all rest in their finished state */
+  .hero__rule,.section-rule{transform:none}
+  .hero__content h1 .word{transform:none}
+  .product-card__photo{clip-path:none}
+}
+
+/* ---------- 1. Tokens ---------------------------------------------------- */
+:root{
+  /* the four brandbook colours */
+  --field-white:#f1f2ea; --carbon:#161a18; --fog:#b3b9ae; --signal:#d5f26b;
+
+  /* Carbon mixed into Field White — light-ground tones */
+  --paper:#f1f2ea;
+  --paper-2:#e4e5dd;      /* 6% carbon  — panel fill */
+  --rule:#cacbc4;         /* 18% carbon — hairline */
+  --rule-strong:#797b76;  /* 55% carbon — 3:1 control border */
+  --ink:#161a18;
+  --ink-2:#585b57;        /* 70% carbon — 6.1:1 secondary text */
+  --ink-3:#696c68;        /* 62% carbon — 4.7:1 meta text */
+
+  /* Field White mixed into Carbon — dark-ground tones */
+  --surface:#232725;      /* 6% field white  — raised on Carbon */
+  --surface-2:#2c302d;    /* 10% field white — cards on Carbon */
+  --dark-rule:#393d3a;    /* 16% field white — hairline on Carbon */
+
+  --font-display:'Nimbus Sans Narrow','Archivo Narrow','Arial Narrow',Impact,sans-serif;
+  --font-body:'Nimbus Sans','Archivo','Helvetica Neue',Arial,sans-serif;
+
+  --gutter:clamp(20px,4vw,72px);
+  --section:clamp(76px,9.5vw,168px);
+  --rail:clamp(0px,4.6vw,84px);     /* the wide left margin of a brandbook page */
+  --rail-w:clamp(34px,4.4vw,68px);  /* width of the vertical name band */
+  --measure:64ch;
+
+  /* Meta and secondary text follow the nearest ground, because a custom
+     property inherits from the closest ancestor that sets it. That keeps a
+     dark card inside a light section correct without specificity games. */
+  --meta-color:var(--fog); --text-2:var(--fog); --number-color:var(--signal);
+
+  --meta:11px; --meta-track:.18em;
+
+  /* ---- The clock ------------------------------------------------------
+     Every movement on this site uses one of these four speeds and one of
+     these two curves. Nothing invents its own. If the movement feels wrong,
+     change it here and the whole site changes with it.
+
+     The script reads these same values out of the stylesheet at start-up,
+     so the CSS and the animation can never drift apart. */
+  --m-snap:120ms;    /* a state you should not notice: hover, focus, a border */
+  --m-move:260ms;    /* something moves, swaps or answers you                 */
+  --m-draw:380ms;    /* a line drawing itself across                          */
+  --m-reveal:620ms;  /* something arriving on screen                          */
+  --m-lead:60ms;     /* the gap between one item and the next in a sequence    */
+  --m-lift:12px;     /* how far anything ever travels. short is precise        */
+
+  --m-out:cubic-bezier(.2,.9,.25,1);   /* the house curve: arrive fast, settle */
+  --m-step:cubic-bezier(.85,0,.15,1);  /* mechanical: sharp at both ends       */
+
+  /* The old names, kept so the rest of the stylesheet needs no edit. */
+  --ease:var(--m-out); --fast:var(--m-snap); --mid:var(--m-move);
+}
+
+/* ---------- 2. Base ------------------------------------------------------ */
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+dialog:not([open]){display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--carbon);color:var(--field-white);font-family:var(--font-body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:has(dialog[open]){overflow:hidden}
+img,video,svg{display:block;max-width:100%}
+img,video{height:auto}
+img{object-fit:cover}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{border:0;background:none;cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.45}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,h4,p,ul,ol,figure{margin-top:0}
+p{margin-bottom:1em}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.on-light :focus-visible{outline-color:var(--ink)}
+::selection{background:var(--signal);color:var(--carbon)}
+.skip-link{position:fixed;top:8px;left:8px;z-index:60;transform:translateY(-200%);
+  background:var(--signal);color:var(--carbon);padding:12px 18px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.1em;font-size:12px}
+.skip-link:focus{transform:none}
+
+/* ---------- 3. Typography ------------------------------------------------ */
+h1,h2,.display{font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  line-height:.87;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:clamp(52px,10.4vw,164px);margin-bottom:0}
+h2{font-size:clamp(38px,6vw,104px);margin-bottom:0}
+h3{font-family:var(--font-body);font-weight:700;font-size:clamp(17px,1.5vw,21px);
+  line-height:1.25;letter-spacing:-.005em}
+h4{font-family:var(--font-body);font-weight:700;font-size:16px;line-height:1.3}
+.lede{font-size:clamp(17px,1.7vw,22px);line-height:1.5;max-width:36ch}
+.body-copy{max-width:var(--measure)}
+
+/* the small letterspaced labels the brandbook sets in its page corners */
+.meta,.mono,.eyebrow{font-size:var(--meta);letter-spacing:var(--meta-track);
+  text-transform:uppercase;font-weight:400;line-height:1.5;color:var(--meta-color)}
+.eyebrow{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  margin-bottom:clamp(20px,2.4vw,34px);font-size:12px;letter-spacing:.16em;font-weight:700}
+.section-number{color:var(--signal);font-weight:700;font-variant-numeric:tabular-nums}
+.on-light .section-number{color:var(--carbon);background:var(--signal);padding:2px 6px 1px}
+.on-signal .section-number{color:var(--carbon);background:transparent;padding:0}
+
+/* ---------- 4. Layout --------------------------------------------------- */
+.section{padding:var(--section) var(--gutter);position:relative}
+.section--flush{padding-left:0;padding-right:0}
+.on-light{background:var(--paper);color:var(--ink);
+  --meta-color:var(--ink-3);--text-2:var(--ink-2);--number-color:var(--ink)}
+.on-dark{background:var(--carbon);color:var(--field-white);
+  --meta-color:var(--fog);--text-2:var(--fog);--number-color:var(--signal)}
+.on-signal{background:var(--signal);color:var(--carbon);
+  --meta-color:var(--carbon);--text-2:var(--carbon);--number-color:var(--carbon)}
+
+.hairline{height:1px;background:var(--dark-rule);border:0;margin:0}
+.on-light .hairline{background:var(--rule)}
+
+/* the short Signal dash the brandbook uses as punctuation */
+.signal-rule{width:56px;height:5px;background:var(--signal);border:0;
+  margin:0 0 clamp(20px,2vw,30px)}
+.on-signal .signal-rule{background:var(--carbon)}
+
+/* From here the section keeps the wide left margin a brandbook page has. */
+@media (min-width:1100px){
+  .section{padding-left:calc(var(--gutter) + var(--rail))}
+  .section--flush{padding-left:0}
+}
+
+/* ---------- 5. Buttons and links ---------------------------------------- */
+.button{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:14px 26px;
+  font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid transparent;
+  transition:background var(--fast) linear,color var(--fast) linear,border-color var(--fast) linear}
+.button .icon{width:18px;height:18px;transition:transform var(--mid) var(--ease)}
+.button:hover .icon{transform:translateX(5px)}
+.button--light{background:var(--field-white);color:var(--carbon)}
+.button--light:hover{background:var(--signal)}
+.button--dark{background:var(--carbon);color:var(--field-white)}
+.button--dark:hover{background:var(--signal);color:var(--carbon)}
+.on-dark .button--dark{background:var(--signal);color:var(--carbon)}
+.on-dark .button--dark:hover{background:var(--field-white)}
+.on-signal .button--dark:hover{background:var(--field-white);color:var(--carbon)}
+.button--outline{background:transparent;border-color:var(--rule-strong);color:var(--ink)}
+.button--outline:hover{border-color:var(--ink);background:var(--paper-2)}
+.on-dark .button--outline{border-color:var(--dark-rule);color:var(--field-white)}
+.on-dark .button--outline:hover{border-color:var(--fog);background:var(--surface)}
+
+.text-link{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12px;
+  letter-spacing:.14em;text-transform:uppercase;padding:6px 0;width:max-content;
+  border-bottom:1px solid var(--dark-rule);transition:border-color var(--fast) linear}
+.text-link:hover{border-color:var(--signal)}
+.text-link .icon{width:17px;height:17px;transition:transform var(--mid) var(--ease)}
+.text-link:hover .icon{transform:translateX(5px)}
+.on-light .text-link{border-color:var(--rule)}
+.on-light .text-link:hover{border-color:var(--ink)}
+
+.circle-link{display:grid;place-items:center;width:60px;height:60px;border-radius:50%;
+  border:1px solid var(--rule-strong);color:var(--ink);
+  transition:background var(--fast) linear,border-color var(--fast) linear}
+.circle-link:hover{background:var(--signal);border-color:var(--signal)}
+.on-dark .circle-link{border-color:var(--dark-rule);color:var(--field-white)}
+.on-dark .circle-link:hover{background:var(--signal);color:var(--carbon);border-color:var(--signal)}
+.icon{width:24px;height:24px;flex-shrink:0}
+.icon-button{display:grid;place-items:center;width:44px;height:44px;color:inherit}
+.icon-button:hover{color:var(--ink-2)}
+.on-dark .icon-button:hover,.dialog-header .icon-button:hover{color:var(--ink)}
+.status-dot,.origin-dot{display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--signal);vertical-align:middle}
+
+/* ---------- 6. Halftone ------------------------------------------------- */
+/* "Van kern naar ruimte": one even dot field, masked so the density opens
+   towards the edges. Brandbook page 16. */
+.halftone{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--signal) 32%,transparent 34%);
+  background-size:11px 11px;opacity:.26;
+  -webkit-mask-image:radial-gradient(115% 78% at 50% 44%,#000 0,#000 26%,rgba(0,0,0,.35) 55%,transparent 82%);
+  mask-image:radial-gradient(115% 78% at 50% 44%,#000 0,#000 26%,rgba(0,0,0,.35) 55%,transparent 82%)}
+.halftone--fog{background-image:radial-gradient(var(--fog) 32%,transparent 34%);opacity:.13}
+.halftone--quiet{opacity:.08}
+.on-signal .halftone{background-image:radial-gradient(var(--carbon) 32%,transparent 34%);opacity:.14}
+.halftone--wide{background-size:15px 15px}
+.halftone--column{
+  -webkit-mask-image:radial-gradient(58% 120% at 50% 50%,#000 0,#000 30%,transparent 86%);
+  mask-image:radial-gradient(58% 120% at 50% 50%,#000 0,#000 30%,transparent 86%)}
+
+/* ---------- 7. Vertical wordmark ---------------------------------------- */
+/* Brandbook page 14: the name runs vertically in a Signal band. */
+.wordmark-rail{position:absolute;top:0;bottom:0;left:0;width:var(--rail-w);
+  background:var(--signal);display:none;overflow:hidden;z-index:2}
+.wordmark-rail__text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  writing-mode:vertical-rl;font-family:var(--font-display);font-weight:700;
+  text-transform:uppercase;color:var(--carbon);white-space:nowrap;
+  font-size:clamp(20px,2.5vw,38px);letter-spacing:.02em;line-height:1}
+.wordmark-rail--print{background:var(--carbon)}
+.wordmark-rail--print .wordmark-rail__text{color:var(--signal)}
+@media (min-width:900px){.wordmark-rail{display:block}}
+
+/* ---------- 8. Announcement and header ---------------------------------- */
+.announcement{background:var(--carbon);color:var(--fog);display:flex;justify-content:space-between;
+  gap:16px;align-items:center;padding:11px var(--gutter);font-size:var(--meta);
+  letter-spacing:var(--meta-track);text-transform:uppercase;border-bottom:1px solid var(--dark-rule)}
+.announcement span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.announcement__right{display:none;align-items:center;gap:8px;white-space:nowrap}
+.site-header{position:sticky;top:0;z-index:40;background:var(--paper);color:var(--ink);
+  border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr auto;
+  align-items:center;gap:clamp(12px,3vw,48px);padding:13px var(--gutter)}
+.brand-link{display:block;line-height:0}
+.brand-logo{display:block}
+.brand-logo img{width:clamp(140px,15vw,216px);height:auto}
+.desktop-nav{display:none;gap:clamp(18px,2.4vw,38px);justify-content:center}
+.desktop-nav a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 0;border-bottom:2px solid transparent;transition:border-color var(--fast) linear}
+.desktop-nav a:hover{border-color:var(--ink)}
+.desktop-nav a[aria-current="page"]{border-color:var(--signal)}
+.header-actions{display:flex;align-items:center;gap:2px;justify-self:end}
+.bag-link{position:relative;display:grid;place-items:center;width:44px;height:44px}
+.cart-count{position:absolute;right:1px;top:3px;min-width:19px;height:19px;padding:0 4px;
+  display:grid;place-items:center;background:var(--signal);color:var(--carbon);
+  font-size:11px;font-weight:700;border-radius:10px;font-variant-numeric:tabular-nums}
+@media (min-width:640px){.announcement__right{display:flex}}
+@media (min-width:900px){.desktop-nav{display:flex}.mobile-menu-button{display:none}}
+
+/* ---------- 9. Footer --------------------------------------------------- */
+.site-footer{background:var(--carbon);color:var(--field-white);
+  padding:clamp(56px,7vw,110px) var(--gutter) 26px;
+  border-top:1px solid var(--dark-rule);position:relative;overflow:hidden}
+.footer__main{display:grid;gap:clamp(30px,5vw,64px);position:relative;z-index:1}
+.footer__main>div:first-child p{color:var(--text-2);max-width:30ch;margin:18px 0 0;font-size:15px}
+.site-footer .brand-logo img{width:clamp(180px,22vw,300px)}
+.site-footer nav{display:grid;gap:12px;align-content:start}
+.site-footer nav a{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--field-white);padding:3px 0;width:max-content;
+  border-bottom:1px solid transparent;transition:border-color var(--fast) linear}
+.site-footer nav a:hover{border-color:var(--signal)}
+.footer__location{line-height:2}
+.footer__bottom{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;
+  align-items:center;margin-top:clamp(40px,5vw,76px);padding-top:22px;
+  border-top:1px solid var(--dark-rule);color:var(--text-2);font-size:var(--meta);
+  letter-spacing:var(--meta-track);text-transform:uppercase;position:relative;z-index:1}
+.footer__bottom div{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer__bottom a:hover{color:var(--signal)}
+@media (min-width:800px){.footer__main{grid-template-columns:1.6fr 1fr 1fr;align-items:start}}
+
+/* ---------- 10. Dialogs ------------------------------------------------- */
+dialog{border:0;padding:0;color:var(--ink);background:var(--paper);max-width:100%;max-height:100%;
+  --meta-color:var(--ink-3);--text-2:var(--ink-2);--number-color:var(--ink)}
+dialog::backdrop{background:rgba(22,26,24,.72)}
+.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:20px clamp(20px,3vw,34px);border-bottom:1px solid var(--rule)}
+.dialog-header h2{font-size:clamp(24px,3vw,38px)}
+.search-dialog,.menu-dialog{width:min(660px,100%);margin:0 auto auto;padding-bottom:26px}
+.cart-dialog{width:min(480px,100%);height:100%;max-height:none;margin:0 0 0 auto;
+  display:flex;flex-direction:column}
+.search-dialog form,.menu-dialog nav{padding:26px clamp(20px,3vw,34px) 0}
+.menu-dialog nav{display:grid;gap:2px}
+.menu-dialog nav a{font-family:var(--font-display);text-transform:uppercase;
+  font-size:clamp(28px,7vw,46px);line-height:1.1;padding:12px 0;border-bottom:1px solid var(--rule)}
+.menu-dialog nav a:hover{color:var(--ink-2)}
+.cart-dialog__content{flex:1;overflow-y:auto;padding:clamp(18px,3vw,28px) clamp(20px,3vw,34px)}
+.cart-dialog__summary{border-top:1px solid var(--rule);padding:22px clamp(20px,3vw,34px);
+  display:grid;gap:14px;background:var(--paper-2)}
+.cart-dialog__summary p{color:var(--ink-2);font-size:13px;margin:0}
+.cart-dialog__summary .button{width:100%;justify-content:space-between}
+.cart-status{margin:0;padding:0 clamp(20px,3vw,34px);color:var(--ink-2);font-size:13px}
+.cart-status:empty{display:none}
+.cart-subtotal{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.cart-subtotal strong{font-family:var(--font-display);font-size:clamp(22px,3vw,30px);letter-spacing:0}
+.cart-line{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:18px 0;
+  border-bottom:1px solid var(--rule)}
+.cart-line:first-child{padding-top:0}
+.cart-line img{width:88px;height:110px;object-fit:cover;background:var(--paper-2)}
+.cart-line h3{font-size:16px;margin-bottom:4px}
+.cart-line p{color:var(--ink-2);font-size:13px;margin:0 0 2px}
+.cart-line__bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:12px}
+.cart-line__bottom input{width:74px}
+.cart-line__bottom strong{font-family:var(--font-display);font-size:19px}
+.cart-remove{font-size:var(--meta);letter-spacing:var(--meta-track);text-transform:uppercase;
+  color:var(--ink-3);padding:8px 0;margin-top:6px;text-decoration:underline}
+.cart-remove:hover{color:var(--ink)}
+.cart-empty{display:grid;gap:20px;justify-items:start}
+.cart-empty h3{font-family:var(--font-display);text-transform:uppercase;font-size:clamp(24px,4vw,34px)}
+
+/* ---------- 11. Forms --------------------------------------------------- */
+label{display:block;font-size:var(--meta);letter-spacing:var(--meta-track);text-transform:uppercase;
+  margin-bottom:8px;color:var(--ink-3);font-weight:700}
+.on-dark label{color:var(--fog)}
+input,select,textarea{width:100%;max-width:100%;border:1px solid var(--rule-strong);
+  background:transparent;border-radius:0;padding:14px 16px;min-height:52px}
+input:hover,select:hover,textarea:hover{border-color:var(--ink-2)}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);outline-offset:1px}
+.on-dark input,.on-dark select,.on-dark textarea{border-color:var(--dark-rule);color:var(--field-white)}
+.on-dark input:hover,.on-dark textarea:hover{border-color:var(--fog)}
+.on-dark input:focus,.on-dark textarea:focus{border-color:var(--signal)}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 49%,currentColor 50%),
+  linear-gradient(-45deg,transparent 49%,currentColor 50%);
+  background-position:calc(100% - 22px) 55%,calc(100% - 15px) 55%;
+  background-size:7px 7px;background-repeat:no-repeat;padding-right:46px}
+textarea{min-height:150px;line-height:1.6}
+.search-input,.newsletter__input{display:flex;border:1px solid var(--rule-strong)}
+.on-dark .search-input,.on-dark .newsletter__input{border-color:var(--dark-rule)}
+.search-input input,.newsletter__input input{border:0;flex:1;min-width:0}
+.search-input input:focus,.newsletter__input input:focus{outline-offset:-3px}
+.search-input:focus-within,.newsletter__input:focus-within{border-color:var(--ink)}
+.on-dark .newsletter__input:focus-within{border-color:var(--signal)}
+.search-input button,.newsletter__input button{width:56px;flex:0 0 56px;display:grid;
+  place-items:center;background:var(--carbon);color:var(--field-white)}
+.search-input button:hover,.newsletter__input button:hover{background:var(--signal);color:var(--carbon)}
+.on-dark .newsletter__input button{background:var(--signal);color:var(--carbon)}
+.on-dark .newsletter__input button:hover{background:var(--field-white)}
+.form-error,.form-success{font-size:14px;padding:12px 14px;margin:14px 0 0;border-left:4px solid}
+.form-error{border-color:var(--carbon);background:var(--paper-2);color:var(--ink)}
+.form-success{border-color:var(--signal);background:var(--paper-2);color:var(--ink)}
+.on-dark .form-error,.on-dark .form-success{background:var(--surface);color:var(--field-white);
+  border-color:var(--signal)}
+.form-error p{margin:0}
+.preview-checkout-note{font-size:13px;color:var(--ink-2)}
+</style>
+    
+<script>
+  (function () {
+    var root = document.documentElement;
+    try {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      root.classList.add('pre-motion');
+      window.setTimeout(function () {
+        if (root.getAttribute('data-motion') !== 'ready') root.classList.remove('pre-motion');
+      }, 1600);
+    } catch (error) {
+      root.classList.remove('pre-motion');
+    }
+  })();
+</script>
+
+    
+
+
+    
+
+
+    <style>
+      @font-face { font-family: 'Archivo Narrow'; font-style: normal; font-weight: 700; font-display: swap; src: url(../../../assets/archivo-narrow-700.woff2) format('woff2'); }
+      @font-face { font-family: 'Archivo'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(../../../assets/archivo-400-700.woff2) format('woff2'); }
+    </style>
+  </head>
+  <body class="page-collection" data-cart-url="/cart" data-cart-add-url="/cart/add" data-cart-change-url="/cart/change" data-root-url="/">
+    <a class="skip-link" href="#MainContent">Ga naar inhoud</a>
+    <div id="shopify-section-header" class="shopify-section"><div class="announcement"><span>Ontworpen voor jouw volgende uitdaging.</span><span class="announcement__right">Vanuit Nederland <span class="origin-dot" aria-hidden="true"></span></span></div>
+<header class="site-header on-light" data-site-header>
+  <a class="brand-link" href="../../../" aria-label="High Performance — Home">
+
+<span class="brand-logo">
+  
+    <img class="brand-logo__fallback" src="../../../assets/high-performance-logo-dark.webp" width="2018" height="261" alt="High Performance">
+  
+</span>
+</a>
+  <nav class="desktop-nav" aria-label="Hoofdnavigatie">
+    
+      <a href="../../../collections/all/">De collectie</a>
+      <a href="../../../#disciplines">Disciplines</a>
+      <a href="../../../#engineering">Het ontwerp</a>
+      <a href="../../../#story">Ons verhaal</a>
+    
+  </nav>
+  <div class="header-actions">
+    <a class="icon-button" href="../../../search/" data-open-dialog="SearchDialog" aria-label="ZOEKEN">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>
+    
+</svg>
+</a>
+    <a class="bag-link" href="../../../cart/" data-open-dialog="CartDialog" aria-label="JE WINKELWAGEN">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+    
+</svg>
+<span class="cart-count" data-cart-count>0</span></a>
+    <button class="icon-button mobile-menu-button" type="button" data-open-dialog="MenuDialog" aria-label="Menu">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M3 7h18M3 16h18"/>
+    
+</svg>
+</button>
+  </div>
+</header>
+
+</div>
+    <main id="MainContent" tabindex="-1"><div id="shopify-section-main" class="shopify-section"><section class="section catalogue on-light"><div class="catalogue-heading"><p class="eyebrow">High Performance / De collectie</p><h1>DE EERSTE COLLECTIE.</h1><div class="rte"><p>Twee ontwerpen, vijf shirts. Eén uitgangspunt: kleding die voor je werkt.</p></div></div>
+  
+  <div class="catalogue-toolbar"><p>5 producten</p><form method="get" class="sort-form"><label for="SortBy">Sorteer op</label><select name="sort_by" id="SortBy"><option value="manual" >Uitgelicht</option><option value="title-ascending" >Naam, A–Z</option><option value="title-descending" selected>Naam, Z–A</option><option value="price-ascending" >Prijs, laag naar hoog</option><option value="price-descending" >Prijs, hoog naar laag</option></select><button type="submit" class="icon-button" aria-label="Sortering toepassen">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M4 12h15m-6-6 6 6-6 6"/>
+    
+</svg>
+</button></form></div>
+  <div class="catalogue-grid" data-motion-group>
+
+<article class="product-card">
+  <a href="../../../products/spine-tee-black-on-black/" class="product-card__image" tabindex="-1" aria-hidden="true">
+    <img src="../../../assets/tee-spine-black-on-black.jpg" width="467" height="591" alt="Achterkant van een zwart shirt met een zwarte verticale High Performance-print" loading="lazy" class="product-card__photo">
+    <span class="product-card__tag mono">Technisch shirt</span>
+    <span class="product-card__view">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M6 18 18 6M6 6h12v12"/>
+    
+</svg>
+</span>
+  </a>
+  <div class="product-card__info"><div><h3><a href="../../../products/spine-tee-black-on-black/">Spine Tee / Black on Black</a></h3><p>High Performance</p></div><span class="product-card__price">€ 65,00</span></div>
+</article>
+
+
+<article class="product-card">
+  <a href="../../../products/spine-tee-black-gold/" class="product-card__image" tabindex="-1" aria-hidden="true">
+    <img src="../../../assets/tee-spine-black-gold.jpg" width="467" height="591" alt="Achterkant van een zwart shirt met een goudkleurige verticale High Performance-print" loading="lazy" class="product-card__photo">
+    <span class="product-card__tag mono">Technisch shirt</span>
+    <span class="product-card__view">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M6 18 18 6M6 6h12v12"/>
+    
+</svg>
+</span>
+  </a>
+  <div class="product-card__info"><div><h3><a href="../../../products/spine-tee-black-gold/">Spine Tee / Black &amp; Gold</a></h3><p>High Performance</p></div><span class="product-card__price">€ 65,00</span></div>
+</article>
+
+
+<article class="product-card">
+  <a href="../../../products/core-tee-sand/" class="product-card__image" tabindex="-1" aria-hidden="true">
+    <img src="../../../assets/tee-core-sand.jpg" width="1254" height="1254" alt="Voorkant van een zandkleurig shirt met een klein zwart merkteken op de borst" loading="lazy" class="product-card__photo">
+    <span class="product-card__tag mono">Technisch shirt</span>
+    <span class="product-card__view">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M6 18 18 6M6 6h12v12"/>
+    
+</svg>
+</span>
+  </a>
+  <div class="product-card__info"><div><h3><a href="../../../products/core-tee-sand/">Core Tee / Sand</a></h3><p>High Performance</p></div><span class="product-card__price">€ 65,00</span></div>
+</article>
+
+
+<article class="product-card">
+  <a href="../../../products/core-tee-heather-grey/" class="product-card__image" tabindex="-1" aria-hidden="true">
+    <img src="../../../assets/tee-core-heather-grey.jpg" width="1254" height="1254" alt="Voorkant van een grijs melange shirt met een klein zwart merkteken op de borst" loading="lazy" class="product-card__photo">
+    <span class="product-card__tag mono">Technisch shirt</span>
+    <span class="product-card__view">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M6 18 18 6M6 6h12v12"/>
+    
+</svg>
+</span>
+  </a>
+  <div class="product-card__info"><div><h3><a href="../../../products/core-tee-heather-grey/">Core Tee / Heather Grey</a></h3><p>High Performance</p></div><span class="product-card__price">€ 65,00</span></div>
+</article>
+
+
+<article class="product-card product-card--photo">
+  <a href="../../../products/core-tee-black/" class="product-card__image" tabindex="-1" aria-hidden="true">
+    <img src="../../../assets/tee-core-black.jpg" width="1002" height="1570" alt="Hardloper in een zwart shirt met een klein goudkleurig merkteken op de borst" loading="lazy" class="product-card__photo">
+    <span class="product-card__tag mono">Technisch shirt</span>
+    <span class="product-card__view">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M6 18 18 6M6 6h12v12"/>
+    
+</svg>
+</span>
+  </a>
+  <div class="product-card__info"><div><h3><a href="../../../products/core-tee-black/">Core Tee / Black</a></h3><p>High Performance</p></div><span class="product-card__price">€ 65,00</span></div>
+</article>
+</div>
+  
+  
+</section>
+
+</div></main>
+    <div id="shopify-section-footer" class="shopify-section"><footer class="site-footer on-dark">
+  
+
+<span class="halftone halftone--fog halftone--quiet halftone--wide" aria-hidden="true" data-halftone></span>
+
+  <div class="footer__main">
+    <div><a class="brand-link" href="../../../">
+
+<span class="brand-logo">
+  
+    <img class="brand-logo__fallback" src="../../../assets/high-performance-logo-light.webp" width="2018" height="261" alt="High Performance">
+  
+</span>
+</a><p>Voor alles wat je nog in je hebt.</p></div>
+    <nav aria-label="Footernavigatie"><a href="../../../collections/all/">De collectie</a><a href="../../../#engineering">Het ontwerp</a><a href="../../../#story">Ons verhaal</a><a href="../../../search/">ZOEKEN</a></nav>
+    <div class="footer__location mono"><span class="origin-dot"></span> Vanuit Nederland<br>Nederland / EUR €</div>
+  </div>
+  <div class="footer__bottom"><span>© 2026 High Performance</span><div></div><a href="#MainContent">Terug naar boven ↑</a></div>
+</footer>
+
+</div>
+    
+<dialog id="SearchDialog" class="search-dialog" aria-labelledby="SearchDialogTitle"><div class="dialog-header"><h2 id="SearchDialogTitle">ZOEKEN</h2><button type="button" class="icon-button" data-close-dialog aria-label="Sluiten">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+    
+</svg>
+</button></div><form action="../../../search/" method="get" role="search"><label for="DialogSearch">Zoek een product</label><div class="search-input"><input id="DialogSearch" type="search" name="q" placeholder="Shirts, heren, dames…" required><input type="hidden" name="type" value="product"><button type="submit" class="icon-button" aria-label="Zoek producten">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M4 12h15m-6-6 6 6-6 6"/>
+    
+</svg>
+</button></div></form></dialog>
+<dialog id="MenuDialog" class="menu-dialog" aria-labelledby="MenuDialogTitle"><div class="dialog-header"><h2 id="MenuDialogTitle">Menu</h2><button type="button" class="icon-button" data-close-dialog aria-label="Sluiten">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+    
+</svg>
+</button></div><nav data-mobile-nav aria-label="Hoofdnavigatie"><a href="../../../collections/all/">De collectie</a><a href="../../../#disciplines">Disciplines</a><a href="../../../#engineering">Het ontwerp</a><a href="../../../#story">Ons verhaal</a></nav></dialog>
+<dialog id="CartDialog" class="cart-dialog" aria-labelledby="CartDialogTitle"><div class="dialog-header"><h2 id="CartDialogTitle">JE WINKELWAGEN <span data-cart-count>0</span></h2><button type="button" class="icon-button" data-close-dialog aria-label="Sluiten">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+    
+</svg>
+</button></div><div data-cart-content class="cart-dialog__content"></div><p data-cart-status class="cart-status" role="status" aria-live="polite"></p><div data-cart-summary class="cart-dialog__summary" hidden><div class="cart-subtotal"><span>Subtotaal</span><strong data-cart-subtotal></strong></div><p>Verzending en eventuele kortingen worden berekend bij het afrekenen.</p><form action="../../../cart/" method="post"><button type="submit" name="checkout" class="button button--dark">Naar afrekenen
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M4 12h15m-6-6 6 6-6 6"/>
+    
+</svg>
+</button></form><a href="../../../cart/" class="text-link">Bekijk winkelwagen</a></div></dialog>
+<script id="StorefrontStrings" type="application/json">{"viewCart":"Bekijk winkelwagen","cartEmpty":"Je winkelwagen is nog leeg.","continueShopping":"Ontdek de collectie","cartError":"De winkelwagen kon niet worden bijgewerkt. Probeer opnieuw of open de winkelwagenpagina.","loading":"Even laden…","remove":"Verwijderen","quantity":"Aantal","added":"Toegevoegd aan je winkelwagen.","adding":"Toevoegen…","add":"In winkelwagen","soldOut":"Uitverkocht","available":"Beschikbaar","shopUrl":"../../../collections/all/","currency":"EUR","locale":"nl"}</script>
+
+    
+
+
+    <script src="../../../assets/motion.js" defer></script>
+    
+
+
+  <script>
+(() => {
+  const root = document.documentElement;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const spring = { type: 'spring', stiffness: 210, damping: 22, mass: 0.85 };
+  const stops = [];
+  const touched = new Set();
+
+  /* --- the clock ---------------------------------------------------------
+     Read straight out of the stylesheet, so the CSS and this file can never
+     disagree about how fast the site moves. The fallbacks are the same values,
+     written twice only so a missing token can never stop the page. */
+  function readClock() {
+    const styles = getComputedStyle(root);
+    const seconds = (name, fallback) => {
+      const raw = styles.getPropertyValue(name).trim();
+      const value = parseFloat(raw);
+      if (!Number.isFinite(value)) return fallback;
+      return raw.endsWith('ms') ? value / 1000 : value;
+    };
+    const curve = (name, fallback) => {
+      const match = styles.getPropertyValue(name).trim().match(/cubic-bezier\(([^)]+)\)/);
+      if (!match) return fallback;
+      const points = match[1].split(',').map(Number);
+      return points.length === 4 && points.every(Number.isFinite) ? points : fallback;
+    };
+    return {
+      snap: seconds('--m-snap', 0.12),
+      move: seconds('--m-move', 0.26),
+      draw: seconds('--m-draw', 0.38),
+      reveal: seconds('--m-reveal', 0.62),
+      lead: seconds('--m-lead', 0.06),
+      lift: parseFloat(styles.getPropertyValue('--m-lift')) || 12,
+      out: curve('--m-out', [0.2, 0.9, 0.25, 1]),
+      step: curve('--m-step', [0.85, 0, 0.15, 1])
+    };
+  }
+  let clock = readClock();
+
+  const show = () => root.classList.remove('pre-motion');
+  const track = (element) => { if (element) touched.add(element); };
+  const hide = (element) => {
+    if (!element) return;
+    element.style.opacity = '0';
+    touched.add(element);
+  };
+  /* A window pulled shut over an element, ready to be opened. */
+  const shut = (element, from) => {
+    if (!element) return;
+    element.style.clipPath = from;
+    touched.add(element);
+  };
+
+  function teardown() {
+    stops.forEach(stop => { try { stop(); } catch (error) { /* already gone */ } });
+    stops.length = 0;
+    touched.forEach(element => {
+      element.style.removeProperty('opacity');
+      element.style.removeProperty('transform');
+      element.style.removeProperty('clip-path');
+    });
+    touched.clear();
+    root.removeAttribute('data-pointer-follow');
+    show();
+  }
+
+  function onScroll(target, update) {
+    const M = window.Motion;
+    if (!target || typeof M.scroll !== 'function') return;
+    try {
+      stops.push(M.scroll(
+        (value) => {
+          const progress = typeof value === 'number' ? value : value && value.y ? value.y.progress : 0;
+          update(Number.isFinite(progress) ? progress : 0);
+        },
+        { target, offset: ['start end', 'end start'] }
+      ));
+    } catch (error) { /* an unsupported browser simply keeps the static layout */ }
+  }
+
+  /* Wait for one animation to end, whichever shape this build of Motion
+     returns. Anything unexpected is ignored: a leftover window is a blemish,
+     never a reason to break the page. */
+  function whenDone(animation, then) {
+    if (!animation) return;
+    const done = animation.finished || animation;
+    if (!done || typeof done.then !== 'function') return;
+    Promise.resolve(done).then(then).catch(() => {});
+  }
+
+  /* Run something the first time its block is reached, once. */
+  function whenReached(M, target, run, amount) {
+    if (typeof M.inView === 'function') {
+      stops.push(M.inView(target, run, { amount: amount === undefined ? 0.12 : amount }));
+    } else {
+      run();
+    }
+  }
+
+  /* --- the hero ----------------------------------------------------------
+     Four beats, in order: the rule draws, the corner labels wipe open behind
+     it, the headline slides up into its lines, the intro and buttons lift in.
+     Nothing fades up from nothing. */
+  function heroEntrance(M, hero) {
+    const lines = [...hero.querySelectorAll('[data-hero-heading] .line')];
+    const rule = hero.querySelector('[data-hero-rule]');
+    const labels = [...hero.querySelectorAll('.hero__top span')];
+    const intro = hero.querySelector('[data-hero-intro]');
+    const actions = hero.querySelector('[data-hero-actions]');
+
+    /* Park everything while the page is still covered by `pre-motion`. The
+       words keep full opacity: the line above them is the window, and it is
+       the window that hides them, not transparency. */
+    const words = [...hero.querySelectorAll('[data-hero-heading] .word')];
+    words.forEach(word => {
+      track(word);
+      word.style.opacity = '1';
+      word.style.transform = 'translateY(106%)';
+    });
+    if (rule) { track(rule); rule.style.transform = 'scaleX(0)'; }
+    labels.forEach(label => shut(label, 'inset(0 100% 0 0)'));
+    hide(intro);
+    hide(actions);
+    show();
+
+    if (rule) {
+      M.animate(rule, { scaleX: [0, 1] }, { duration: clock.draw, ease: clock.step });
+    }
+    if (labels.length) {
+      M.animate(labels, { clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'] },
+        { duration: clock.draw, delay: M.stagger(clock.lead, { start: clock.lead }), ease: clock.step });
+    }
+
+    /* One beat per line, not per word: a line is uncovered in one movement. */
+    const linePause = clock.lead * 2;
+    lines.forEach((line, index) => {
+      const inLine = [...line.querySelectorAll('.word')];
+      if (!inLine.length) return;
+      M.animate(inLine, { y: ['106%', '0%'] },
+        { duration: clock.reveal, delay: linePause + index * linePause, ease: clock.out });
+    });
+
+    const settled = linePause + lines.length * linePause + clock.reveal * 0.3;
+    if (intro) {
+      M.animate(intro, { opacity: [0, 1], y: [clock.lift, 0] },
+        { duration: clock.move, delay: settled, ease: clock.out });
+    }
+    if (actions) {
+      M.animate(actions, { opacity: [0, 1], y: [clock.lift, 0] },
+        { duration: clock.move, delay: settled + clock.lead, ease: clock.out });
+    }
+
+    const progress = hero.querySelector('[data-hero-progress]');
+    if (progress) {
+      track(progress);
+      onScroll(hero, (value) => { progress.style.transform = `scaleX(${value})`; });
+    }
+  }
+
+  /* --- the hairline that opens a block ---------------------------------- */
+  function sectionRules(M, scope) {
+    scope.querySelectorAll('[data-section-rule]').forEach(rule => {
+      track(rule);
+      rule.style.transform = 'scaleX(0)';
+      whenReached(M, rule, () => {
+        M.animate(rule, { scaleX: [0, 1] }, { duration: clock.draw, ease: clock.step });
+      }, 0);
+    });
+  }
+
+  /* --- product cards: the frame, then the photograph, then the words -----
+     Two beats per card instead of one slide. The photo is uncovered from the
+     bottom edge; the name and price follow a moment later. */
+  function cardEntrances(M, scope) {
+    scope.querySelectorAll('[data-motion-cards]').forEach(grid => {
+      const parts = [...grid.children]
+        .filter(item => item.nodeType === 1)
+        .map(item => ({
+          item,
+          photo: item.querySelector('.product-card__photo'),
+          info: item.querySelector('.product-card__info')
+        }));
+      if (!parts.length) return;
+
+      parts.forEach(({ item, photo, info }) => {
+        hide(item);
+        shut(photo, 'inset(100% 0 0 0)');
+        hide(info);
+      });
+
+      whenReached(M, grid, () => {
+        parts.forEach(({ item, photo, info }, index) => {
+          const at = index * clock.lead;
+          if (photo) {
+            /* The window goes over the photograph itself, never over the link
+               around it. A clip-path also clips what the pointer can reach, and
+               a card you cannot hover while it is arriving is a card that feels
+               broken. */
+            M.animate(item, { opacity: [0, 1] }, { duration: clock.move, delay: at, ease: 'linear' });
+            const uncover = M.animate(photo, { clipPath: ['inset(100% 0 0 0)', 'inset(0% 0 0 0)'] },
+              { duration: clock.reveal, delay: at, ease: clock.out });
+            /* Drop the window once it is fully open, so nothing is left
+               clipping the photograph while the pointer plays with it.
+               This build of Motion returns playback controls that are
+               themselves thenable; older ones expose a `finished` promise.
+               Take whichever is there. */
+            whenDone(uncover, () => requestAnimationFrame(
+              () => photo.style.removeProperty('clip-path')
+            ));
+          } else {
+            /* a panel with no photograph, such as the intro block */
+            M.animate(item, { opacity: [0, 1], y: [clock.lift, 0] },
+              { duration: clock.reveal, delay: at, ease: clock.out });
+          }
+          if (info) {
+            M.animate(info, { opacity: [0, 1], y: [clock.lift, 0] },
+              { duration: clock.move, delay: at + clock.lead * 2, ease: clock.out });
+          }
+        });
+      }, 0.1);
+    });
+  }
+
+  /* --- everything else that arrives in a group -------------------------- */
+  function groupEntrances(M, scope) {
+    scope.querySelectorAll('[data-motion-group]').forEach(group => {
+      const items = [...group.children].filter(item => item.nodeType === 1);
+      if (!items.length) return;
+      items.forEach(hide);
+      whenReached(M, group, () => {
+        M.animate(items, { opacity: [0, 1], y: [clock.lift, 0] },
+          { delay: M.stagger(clock.lead), duration: clock.reveal, ease: clock.out });
+      });
+    });
+  }
+
+  /* --- the halftone opening towards the edges ---------------------------- */
+  function halftones(scope) {
+    scope.querySelectorAll('[data-halftone]').forEach(field => {
+      const holder = field.parentElement;
+      track(field);
+      onScroll(holder, (value) => {
+        field.style.transform = `scale(${1 + value * 0.16})`;
+      });
+    });
+  }
+
+  /* --- quiet parallax on the campaign images ----------------------------- */
+  function parallax(scope) {
+    scope.querySelectorAll('[data-parallax] img').forEach(image => {
+      track(image);
+      onScroll(image.parentElement, (value) => {
+        image.style.transform = `translate3d(0,${(value - 0.5) * 7}%,0) scale(1.08)`;
+      });
+    });
+    scope.querySelectorAll('[data-wordmark]').forEach(mark => {
+      track(mark);
+      const holder = mark.closest('.wordmark-rail');
+      onScroll(holder, (value) => {
+        mark.style.transform = `translate(-50%,-50%) translateY(${(value - 0.5) * 34}px)`;
+      });
+    });
+  }
+
+  /* --- the construction study ------------------------------------------- */
+  function construction(M) {
+    document.addEventListener('click', (event) => {
+      const toggle = event.target.closest('[data-construction-toggle]');
+      if (toggle) {
+        const section = toggle.closest('[data-engineering]');
+        if (!section) return;
+        const open = section.classList.contains('is-expanded');
+        const move = (selector, x, y) => {
+          const panel = section.querySelector(selector);
+          if (!panel) return;
+          track(panel);
+          M.animate(panel, { x: open ? x : 0, y: open ? y : 0 }, spring);
+        };
+        move('.diagram-panel--left', -28, -12);
+        move('.diagram-panel--right', 28, -12);
+        move('.diagram-panel--collar', 0, -32);
+        const seam = section.querySelector('.diagram-seam');
+        if (seam && open) {
+          M.animate(seam, { strokeDashoffset: [42, 0], opacity: [0.25, 1] },
+            { duration: clock.reveal, ease: clock.out });
+        }
+      }
+
+      const marker = event.target.closest('.hotspot');
+      if (marker) M.animate(marker, { scale: [1, 1.22, 1] }, { duration: clock.move, ease: clock.out });
+
+      const trigger = event.target.closest('[data-feature]');
+      if (trigger) {
+        const section = trigger.closest('[data-engineering]');
+        const body = section && section.querySelector('.engineering-feature.is-active .engineering-feature__body p');
+        if (body) M.animate(body, { opacity: [0, 1], y: [clock.lift, 0] }, { duration: clock.move, ease: clock.out });
+      }
+    });
+  }
+
+  /* --- dialogs and the cart -------------------------------------------- */
+  function dialogs(M) {
+    document.querySelectorAll('dialog').forEach(dialog => {
+      const drawer = dialog.classList.contains('cart-dialog');
+      const observer = new MutationObserver(() => {
+        if (!dialog.open) return;
+        track(dialog);
+        M.animate(dialog,
+          drawer ? { x: [48, 0], opacity: [0, 1] } : { y: [-26, 0], opacity: [0, 1] },
+          { duration: clock.move, ease: clock.out });
+      });
+      observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+      stops.push(() => observer.disconnect());
+    });
+
+    const pulse = (element) => {
+      if (!element) return;
+      const observer = new MutationObserver(() => {
+        track(element);
+        M.animate(element, { scale: [1, 1.12, 1] }, { duration: clock.move, ease: clock.out });
+      });
+      observer.observe(element, { childList: true, characterData: true, subtree: true });
+      stops.push(() => observer.disconnect());
+    };
+    pulse(document.querySelector('[data-cart-subtotal]'));
+    document.querySelectorAll('.cart-count[data-cart-count]').forEach(pulse);
+  }
+
+  /* --- the shirt follows the pointer ------------------------------------ */
+  function pointerFollow(M, scope) {
+    if (!finePointer.matches || typeof M.hover !== 'function') return;
+    root.setAttribute('data-pointer-follow', '');
+    scope.querySelectorAll('.product-card__image').forEach(frame => {
+      const photo = frame.querySelector('.product-card__photo');
+      if (!photo) return;
+      track(photo);
+      stops.push(M.hover(frame, () => {
+        const follow = (event) => {
+          const box = frame.getBoundingClientRect();
+          if (!box.width || !box.height) return;
+          const x = ((event.clientX - box.left) / box.width - 0.5) * 16;
+          const y = ((event.clientY - box.top) / box.height - 0.5) * 16;
+          M.animate(photo, { x, y, scale: 1.05 }, { duration: clock.move, ease: clock.out });
+        };
+        frame.addEventListener('pointermove', follow);
+        return () => {
+          frame.removeEventListener('pointermove', follow);
+          M.animate(photo, { x: 0, y: 0, scale: 1 }, { duration: clock.move, ease: clock.out });
+        };
+      }));
+    });
+  }
+
+  function choreograph(M, scope) {
+    const hero = scope.querySelector('[data-hero]');
+    if (hero) heroEntrance(M, hero);
+    sectionRules(M, scope);
+    cardEntrances(M, scope);
+    groupEntrances(M, scope);
+    halftones(scope);
+    parallax(scope);
+    pointerFollow(M, scope);
+  }
+
+  let started = false;
+  function start() {
+    if (started) return;
+    const M = window.Motion;
+    if (!M || typeof M.animate !== 'function' || typeof M.stagger !== 'function') { show(); return; }
+    if (reduced.matches) { show(); return; }
+    started = true;
+    clock = readClock();
+    root.setAttribute('data-motion', 'ready');
+    try {
+      choreograph(M, document);
+      construction(M);
+      dialogs(M);
+    } catch (error) {
+      teardown();
+      root.removeAttribute('data-motion');
+    }
+    show();
+  }
+
+  reduced.addEventListener('change', () => { if (reduced.matches) teardown(); });
+  document.addEventListener('shopify:section:load', (event) => {
+    if (!started) return;
+    try { choreograph(window.Motion, event.target); } catch (error) { /* editor reload */ }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+    window.addEventListener('load', start, { once: true });
+  } else {
+    start();
+    window.addEventListener('load', start, { once: true });
+  }
+})();
+
+(() => {
+  const stringsNode = document.getElementById('StorefrontStrings');
+  if (!stringsNode) return;
+  const words = JSON.parse(stringsNode.textContent);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const root = document.body.dataset;
+  const cartDialog = document.getElementById('CartDialog');
+  let cartBusy = false;
+  let cartRequest = 0;
+  let cartSnapshot = null;
+  const money = (amount, currency = words.currency) => new Intl.NumberFormat(words.locale, { style: 'currency', currency }).format(amount / 100);
+  const element = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+  const cartStatus = (message) => { cartDialog.querySelector('[data-cart-status]').textContent = message; };
+  const cartCounts = (count) => document.querySelectorAll('[data-cart-count]').forEach(node => { node.textContent = count; });
+  function displayCart(cart) {
+    cartSnapshot = cart;
+    const content = cartDialog.querySelector('[data-cart-content]');
+    content.replaceChildren();
+    cartCounts(cart.item_count);
+    cartDialog.querySelector('[data-cart-summary]').hidden = cart.item_count === 0;
+    cartDialog.querySelector('[data-cart-subtotal]').textContent = money(cart.total_price, cart.currency);
+    if (!cart.item_count) {
+      const empty = element('div', 'cart-empty');
+      const link = element('a', 'button button--dark', words.continueShopping);
+      link.href = words.shopUrl;
+      empty.append(element('h3', '', words.cartEmpty), link);
+      content.append(empty);
+      return;
+    }
+    cart.items.forEach((item, index) => {
+      const row = element('div', 'cart-line');
+      if (item.image) {
+        const img = element('img');
+        img.src = item.image;
+        img.alt = item.product_title;
+        img.width = 90; img.height = 113; img.loading = 'lazy';
+        row.append(img);
+      } else { row.append(element('div')); }
+      const info = element('div');
+      const heading = element('h3');
+      const link = element('a', '', item.product_title);
+      link.href = item.url;
+      heading.append(link); info.append(heading);
+      if (item.variant_title && item.variant_title !== 'Default Title') info.append(element('p', '', item.variant_title));
+      Object.entries(item.properties || {}).filter(([key,value]) => !key.startsWith('_') && value).forEach(([key,value]) => info.append(element('p', '', `${key}: ${value}`)));
+      if (item.selling_plan_allocation) info.append(element('p', '', item.selling_plan_allocation.selling_plan.name));
+      (item.line_level_discount_allocations || []).forEach(discount => info.append(element('p', '', discount.discount_application.title)));
+      const bottom = element('div', 'cart-line__bottom');
+      const quantityWrapper = element('div');
+      const label = element('label', '', words.quantity);
+      const input = element('input');
+      input.type = 'number'; input.min = '0'; input.max = '99'; input.inputMode = 'numeric'; input.value = item.quantity;
+      input.id = `DrawerQuantity-${index}`; input.dataset.cartKey = item.key;
+      label.htmlFor = input.id;
+      quantityWrapper.append(label, input);
+      bottom.append(quantityWrapper, element('strong', '', money(item.final_line_price, cart.currency)));
+      const remove = element('button', 'cart-remove', words.remove);
+      remove.type = 'button'; remove.dataset.cartRemove = item.key;
+      remove.setAttribute('aria-label', `${words.remove}: ${item.product_title}`);
+      info.append(bottom, remove); row.append(info); content.append(row);
+    });
+  }
+  async function getCart() {
+    const request = ++cartRequest;
+    cartStatus(words.loading);
+    try {
+      const response = await fetch(`${root.cartUrl}.js`, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error();
+      const cart = await response.json();
+      if (request !== cartRequest) return;
+      displayCart(cart); cartStatus(''); return true;
+    } catch { cartStatus(words.cartError); cartDialog.querySelector('[data-cart-summary]').hidden=true; const link=element('a','text-link',words.viewCart);link.href=root.cartUrl;cartDialog.querySelector('[data-cart-content]').replaceChildren(link); return false; }
+  }
+  async function changeCart(key, quantity) {
+    if (cartBusy) return;
+    cartBusy = true;
+    cartRequest += 1;
+    cartDialog.querySelectorAll('[data-cart-key],[data-cart-remove],button[name="checkout"]').forEach(node => { node.disabled = true; });
+    cartStatus(words.loading);
+    try {
+      const response = await fetch(`${root.cartChangeUrl}.js`, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ id: key, quantity }) });
+      const cart = await response.json();
+      if (!response.ok) throw new Error(cart.description || words.cartError);
+      displayCart(cart); cartStatus('');
+      const updatedInput = [...cartDialog.querySelectorAll('[data-cart-key]')].find(input => input.dataset.cartKey === key);
+      (updatedInput || cartDialog.querySelector('[data-close-dialog]')).focus();
+    } catch (error) { if (cartSnapshot) displayCart(cartSnapshot); cartStatus(error.message || words.cartError); }
+    finally { cartBusy = false; cartDialog.querySelectorAll('[data-cart-key],[data-cart-remove],button[name="checkout"]').forEach(node => { node.disabled = false; }); }
+  }
+  document.addEventListener('click', (event) => {
+    const open = event.target.closest('[data-open-dialog]');
+    if (open && !event.ctrlKey && !event.metaKey && !event.shiftKey && event.button === 0) {
+      const dialog = document.getElementById(open.dataset.openDialog);
+      if (dialog?.showModal) { event.preventDefault(); dialog.showModal(); if (dialog === cartDialog) getCart(); }
+    }
+    const close = event.target.closest('[data-close-dialog]');
+    if (close) close.closest('dialog').close();
+    if (event.target.closest('#MenuDialog nav a')) document.getElementById('MenuDialog').close();
+    const remove = event.target.closest('[data-cart-remove]');
+    if (remove) changeCart(remove.dataset.cartRemove, 0);
+  });
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('keydown', event => { if (event.key === 'Escape') { event.preventDefault(); dialog.close(); } });
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+    });
+  });
+  document.addEventListener('change', (event) => {
+    const quantity = event.target.closest('[data-cart-key]');
+    if (quantity) {
+      if (!quantity.checkValidity() || !Number.isInteger(Number(quantity.value))) { quantity.reportValidity(); return; }
+      changeCart(quantity.dataset.cartKey, Number(quantity.value));
+    }
+    const select = event.target.closest('[data-variant-select]');
+    if (select) {
+      const section = select.closest('[data-product-section]');
+      const option = select.selectedOptions[0];
+      section.querySelector('[data-product-price]').textContent = option.dataset.price;
+      const compare = section.querySelector('[data-product-compare]');
+      compare.textContent = option.dataset.compare;
+      compare.hidden = option.dataset.onSale !== 'true';
+      const available = option.dataset.available === 'true';
+      section.querySelector('[name="add"]').disabled = !available;
+      section.querySelector('[data-add-label]').textContent = available ? words.add : words.soldOut;
+      section.querySelector('[data-product-availability]').textContent = available ? words.available : words.soldOut;
+      const url = new URL(location.href); url.searchParams.set('variant', option.value); history.replaceState({}, '', url);
+      const media = [...section.querySelectorAll('[data-media-id]')].find(node => node.dataset.mediaId === option.dataset.mediaId);
+      if (media) media.scrollIntoView({ block: 'nearest', inline: 'start', behavior: reduced.matches ? 'instant' : 'smooth' });
+    }
+  });
+  document.addEventListener('submit', async (event) => {
+    const form = event.target.closest('.product-form');
+    if (!form || (event.submitter && event.submitter.name !== 'add') || !cartDialog?.showModal) return;
+    event.preventDefault();
+    const button = form.querySelector('[name="add"]');
+    const label = button.querySelector('[data-add-label]');
+    if (button.disabled) return;
+    const errorNode = form.querySelector('[data-product-error]');
+    const body = new FormData(form);
+    button.disabled = true; label.textContent = words.adding; errorNode.hidden = true;
+    try {
+      const response = await fetch(`${root.cartAddUrl}.js`, { method: 'POST', body, headers: { Accept: 'application/json' } });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.description || result.message || words.cartError);
+      cartDialog.showModal(); if (await getCart()) cartStatus(words.added);
+    } catch (error) { errorNode.textContent = error.message || words.cartError; errorNode.hidden = false; }
+    finally { button.disabled = false; label.textContent = words.add; }
+  });
+  const heroControllers = new WeakMap();
+  function initHero(hero) {
+    if (heroControllers.has(hero)) return;
+    const video = hero.querySelector('video');
+    const button = hero.querySelector('[data-motion-toggle]');
+    if (!video || !button) return;
+    video.muted = true; video.playsInline = true;
+    let visible = false, userPaused = false, loaded = false;
+    const updateLabel = () => { const paused = video.paused; button.classList.toggle('is-paused', paused); const label = paused ? button.dataset.playLabel : button.dataset.pauseLabel; button.setAttribute('aria-label', label); button.querySelector('[data-motion-label]').textContent = label; };
+    const update = () => {
+      const preventAuto = reduced.matches || navigator.connection?.saveData;
+      button.hidden = Boolean(preventAuto);
+      if (!visible || document.hidden || preventAuto || userPaused) { video.pause(); updateLabel(); return; }
+      if (!loaded) { video.querySelectorAll('source[data-src]').forEach(source => { source.src = source.dataset.src; }); video.load(); loaded = true; }
+      video.play().then(() => { video.classList.add('is-playing'); updateLabel(); }).catch(() => { updateLabel(); });
+    };
+    button.addEventListener('click', () => { userPaused = !userPaused; update(); });
+    video.addEventListener('playing', () => { video.classList.add('is-playing'); updateLabel(); });
+    video.addEventListener('pause', updateLabel);
+    video.addEventListener('error', () => { video.classList.remove('is-playing'); button.hidden = true; });
+    const observer = new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }, { threshold: 0.08 });
+    observer.observe(hero);
+    document.addEventListener('visibilitychange', update);
+    reduced.addEventListener('change', update);
+    heroControllers.set(hero, () => { observer.disconnect(); video.pause(); document.removeEventListener('visibilitychange', update); reduced.removeEventListener('change', update); });
+  }
+  const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); } }), { threshold: 0.08 });
+  function initialize(scope = document) {
+    scope.querySelectorAll('[data-hero]').forEach(initHero);
+    scope.querySelectorAll('.reveal:not(.is-prepared)').forEach(node => { if (reduced.matches || node.getBoundingClientRect().top < innerHeight) { node.classList.add('is-visible'); return; } node.classList.add('is-prepared'); revealObserver.observe(node); });
+    const desktopNav = document.querySelector('.desktop-nav');
+    const mobileNav = document.querySelector('[data-mobile-nav]');
+    if (desktopNav && mobileNav) mobileNav.replaceChildren(...[...desktopNav.children].map(node => node.cloneNode(true)));
+  }
+  document.addEventListener('click', event => {
+    const trigger = event.target.closest('[data-feature]');
+    if (trigger) {
+      const section = trigger.closest('[data-engineering]');
+      const selected = trigger.dataset.feature;
+      section.querySelector('.engineering__stage').dataset.activeFeature = selected;
+      section.querySelectorAll('.engineering-feature').forEach((feature, index) => {
+        const active = String(index) === selected;
+        feature.classList.toggle('is-active', active);
+        feature.querySelector('button').setAttribute('aria-expanded', String(active));
+        feature.querySelector('.engineering-feature__body').hidden = !active;
+      });
+      section.querySelectorAll('.hotspot').forEach(node => { const active = node.dataset.feature === selected; node.classList.toggle('is-active', active); node.setAttribute('aria-pressed', String(active)); });
+    }
+    const expand = event.target.closest('[data-construction-toggle]');
+    if (expand) { const section = expand.closest('[data-engineering]'); const expanded = section.classList.toggle('is-expanded'); expand.setAttribute('aria-pressed', String(expanded)); }
+  });
+  document.addEventListener('shopify:section:load', event => initialize(event.target));
+  document.addEventListener('shopify:section:unload', event => { event.target.querySelectorAll('[data-hero]').forEach(hero => heroControllers.get(hero)?.()); event.target.querySelectorAll('.reveal').forEach(node=>revealObserver.unobserve(node)); });
+  initialize();
+})();
+</script><script src="../../../preview-shim.js"></script></body>
+</html>

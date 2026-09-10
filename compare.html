@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vergelijken — High Performance</title>
+<style>
+  @font-face { font-family: 'Archivo Narrow'; font-style: normal; font-weight: 700; font-display: swap; src: url(shared/archivo-narrow-700.woff2) format('woff2'); }
+  @font-face { font-family: 'Archivo'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(shared/archivo-400-700.woff2) format('woff2'); }
+  :root { --carbon:#161A18; --white:#F1F2EA; --fog:#B3B9AE; --signal:#D5F26B; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--carbon); color:var(--white); font:16px/1.6 Archivo, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { font-family:'Archivo Narrow', 'Arial Narrow', Archivo, sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:.01em; margin:0; }
+  a { color:inherit; }
+  .wrap { max-width:1040px; margin:0 auto; padding:clamp(28px,6vw,72px) clamp(20px,5vw,40px) 80px; }
+  .eyebrow { font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--signal); margin:0 0 14px; }
+  .rule { border:0; border-top:1px solid rgba(241,242,234,.18); margin:0; }
+
+  body { height:100vh; display:flex; flex-direction:column; overflow:hidden; }
+  .bar { display:flex; flex-wrap:wrap; gap:14px 22px; align-items:center; padding:12px clamp(14px,3vw,24px); border-bottom:1px solid rgba(241,242,234,.18); }
+  .bar h1 { font-size:14px; letter-spacing:.16em; margin-right:8px; }
+  label { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--fog); display:flex; gap:8px; align-items:center; }
+  select { background:var(--carbon); color:var(--white); border:1px solid rgba(241,242,234,.4); font:inherit; font-size:13px; padding:6px 8px; text-transform:none; letter-spacing:0; max-width:44vw; }
+  .home { font-size:12px; color:var(--fog); text-decoration:none; margin-left:auto; }
+  .home:hover { color:var(--white); }
+  .panes { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(241,242,234,.18); min-height:0; }
+  .pane { background:var(--carbon); display:flex; flex-direction:column; min-width:0; min-height:0; }
+  .pane header { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--fog); padding:8px 12px; border-bottom:1px solid rgba(241,242,234,.12); }
+  .frame { flex:1; display:flex; justify-content:center; overflow:hidden; background:#0d0f0e; }
+  iframe { border:0; width:100%; height:100%; background:var(--white); }
+  body[data-width="phone"] iframe { width:390px; }
+  @media (max-width:860px) { .panes { grid-template-columns:1fr; grid-template-rows:1fr 1fr; } }
+</style>
+</head>
+<body data-width="full">
+<div class="bar">
+  <h1>Vergelijken</h1>
+  <label>Links <select id="left"><option value="v1-02">v1.02 — De goedgekeurde versie</option><option value="v2-0-0">v2.0.0 — De nieuwe richting</option><option value="motion">Motion-studie — Beweging op v1.02</option></select></label>
+  <label>Rechts <select id="right"><option value="v1-02">v1.02 — De goedgekeurde versie</option><option value="v2-0-0">v2.0.0 — De nieuwe richting</option><option value="motion">Motion-studie — Beweging op v1.02</option></select></label>
+  <label>Pagina <select id="page"><option value="">Home</option><option value="collections/all/">De collectie</option><option value="products/spine-tee-black-gold/">Product — Spine Tee / Black &amp; Gold</option><option value="products/core-tee-sand/">Product — Core Tee / Sand</option><option value="cart/">Winkelwagen</option><option value="search/?q=tee">Zoeken</option><option value="pages/verhaal/">Het verhaal</option><option value="pages/contact/">Contact</option></select></label>
+  <label>Breedte <select id="width"><option value="full">Volledig</option><option value="phone">Telefoon</option></select></label>
+  <a class="home" href="./">Alle versies</a>
+</div>
+<div class="panes">
+  <section class="pane"><header id="leftName"></header><div class="frame"><iframe id="leftFrame" title="Linker versie"></iframe></div></section>
+  <section class="pane"><header id="rightName"></header><div class="frame"><iframe id="rightFrame" title="Rechter versie"></iframe></div></section>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const left = document.getElementById('left');
+  const right = document.getElementById('right');
+  const page = document.getElementById('page');
+  const width = document.getElementById('width');
+  left.value = params.get('left') || left.options[0].value;
+  right.value = params.get('right') || (right.options[1] || right.options[0]).value;
+  if (params.get('page')) page.value = params.get('page');
+
+  function show() {
+    document.getElementById('leftFrame').src = left.value + '/' + page.value;
+    document.getElementById('rightFrame').src = right.value + '/' + page.value;
+    document.getElementById('leftName').textContent = left.selectedOptions[0].textContent;
+    document.getElementById('rightName').textContent = right.selectedOptions[0].textContent;
+    const next = new URLSearchParams({ left: left.value, right: right.value, page: page.value });
+    history.replaceState({}, '', '?' + next);
+  }
+  [left, right, page].forEach((control) => control.addEventListener('change', show));
+  width.addEventListener('change', () => { document.body.dataset.width = width.value; });
+  show();
+</script>
+</body>
+</html>
